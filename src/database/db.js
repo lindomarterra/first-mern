@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose")  // serve para connectar o backend com o mongoDB
 
 const connectDatabase = () => {
   console.log("wait connecting to the database")
@@ -13,3 +13,5 @@ const connectDatabase = () => {
 }
 
 module.exports = connectDatabase
+
+//ESSA funcão precisa ser executada no arquivo principal

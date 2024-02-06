@@ -32,6 +32,7 @@ const User = mongoose.model("User", userSchema)
 
 module.exports= User
 
+//serve para limitar como os documentos serão criadoss
 
 
 
