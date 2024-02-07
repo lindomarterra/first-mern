@@ -1,11 +1,13 @@
-const express = require('express')
-const app = express()
-const connectDatabase= require('./src/database/db') //funcão que liga com mongoDB
-const userRoute=require('./src/routes/use.route') 
+import express from 'express'
+import connectDatabase from './src/database/db.js'
+import userRoute from './src/routes/use.route.js'
+
 const port=3000
+const app = express()
+
 
 connectDatabase()
-app.use(express.json())  // serve para poder enviar formularios json sem isso não funciona
+app.use(express.json())  // serve para poder enviar formularios em formato json 
 app.use('/user', userRoute )
 
 app.listen(port, ()=> console.log(` Servidor rodando na porta ${port} `))

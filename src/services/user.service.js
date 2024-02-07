@@ -1,5 +1,4 @@
-// const { models } = require("mongoose")
-const User= require("../models/User")
+import User from "../models/User.js"
 
 const createService= (body) => User.create(body)
 
@@ -18,4 +17,5 @@ const updateService= (
 ) => User.findOneAndUpdate({_id: id},{ name, username, email, password, avatar, background})
 
 // se colocar as chaves em uma arrow function deve-se colocar o return
-module.exports= { createService, findAllService, findByIdService, updateService }
+
+export default { createService, findAllService, findByIdService, updateService }

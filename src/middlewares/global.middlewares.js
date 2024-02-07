@@ -1,17 +1,22 @@
-const mongoose= require("mongoose") // precisa importa mongoose
-const userService= require("../services/user.service") // serve para acessar o banco de dados
+import mongoose from "mongoose"
+import userService from "../services/user.service.js" 
 
-const validId= (req, res, next)=>{
-    const id= req.params.id
+
+export const validId= (req, res, next)=>{
+    try{
+        const id= req.params.id
 
     if(!mongoose.Types.ObjectId.isValid(id)){  // verifica se o id é valido, deve importar mongoose
         return res.status(400).send({message: "ID is not valid!"})
     }
-    next()
+    next()} catch(err){
+        res.status(500).send({message: err.message}) 
+    }
 }
 
-const validUser= async (req, res, next)=>{
-    const id= req.params.id
+export const validUser= async (req, res, next)=>{
+    try{
+        const id= req.params.id
 
     const user= await userService.findByIdService(id)
 
@@ -22,9 +27,10 @@ const validUser= async (req, res, next)=>{
     req.id= id
     req.user= user
     //informa para proxima função que vai id e user
-    next()
+    next()} catch(err){
+        res.status(500).send({message: err.message}) 
+    }
 }
 
-module.exports= { validId, validUser}
 
 // middlewares são funções interceptadoras
