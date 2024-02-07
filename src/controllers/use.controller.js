@@ -38,18 +38,7 @@ const findAll=  async (req, res)=>{  //sempre que formos consultar o banco de da
 }
 
 const findById= async (req, res)=>{
-    const id= req.params.id
-
-    if(!mongoose.Types.ObjectId.isValid(id)){  // verifica se o id é valido, deve importar mongoose
-        return res.status(400).send({message: "ID is not valid!"})
-    }
-
-    const user= await userService.findByIdService(id)
-
-    if(!user){
-        return res.status(400).send({message: "User not found!"})
-    }
-
+    const user= req.user
     res.send(user)
 }
 
@@ -60,17 +49,7 @@ const update= async (req, res)=>{
         res.status(400).send({ message: "Submit at least one field for update" })
     }
 
-    const id= req.params.id
-
-    if(!mongoose.Types.ObjectId.isValid(id)){  // verifica se o id é valido
-        return res.status(400).send({message: "ID is not valid!"})
-    }
-
-    const user= await userService.findByIdService(id)
-
-    if(!user){
-        return res.status(400).send({message: "User not found!"})
-    }
+    const {id, user} = req
 
     await userService.updateService(
         id,

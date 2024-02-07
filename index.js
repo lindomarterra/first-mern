@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const connectDatabase= require('./src/database/db') //funcão que liga com mongoDB
-const userRoute=require('./src/routes/use.route')
+const userRoute=require('./src/routes/use.route') 
 const port=3000
 
 connectDatabase()
@@ -29,6 +29,6 @@ app.listen(port, ()=> console.log(` Servidor rodando na porta ${port} `))
   //res.send({soma: soma})
 
 
-  //extensão json view
+  //usar extensão json view
 
 //});
