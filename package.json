@@ -4,9 +4,8 @@
   "description": "API for SPA Breaking News",
   "main": "index.js",
   "type": "module",
-
   "scripts": {
-    "start": "node index",  
+    "start": "node index",
     "dev": "nodemon index"
   },
   "repository": {
@@ -21,6 +20,8 @@
   },
   "homepage": "https://github.com/lindomarterra/first-mern#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "mongoose": "^8.1.1",
     "nodemon": "^3.0.3"

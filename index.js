@@ -1,8 +1,12 @@
 import express from 'express'
-import connectDatabase from './src/database/db.js'
+import connectDatabase from './src/database/database.js'
 import userRoute from './src/routes/use.route.js'
 
-const port=3000
+import dotenv from "dotenv"  
+dotenv.config()
+//dotenv deve ser importado dentro do index porque ele esta dentro de database, e database esta sendo sendo executatda somente no index. Os outro arquivos não esta sendo usado.
+
+const port= process.env.PORT || 3000
 const app = express()
 
 
