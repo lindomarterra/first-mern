@@ -1,8 +1,10 @@
 import express from 'express'
 import connectDatabase from './src/database/database.js'
-import userRoute from './src/routes/use.route.js'
-
 import dotenv from "dotenv"  
+
+import userRoute from './src/routes/use.route.js'
+import authRoute from './src/routes/auth.route.js'
+
 dotenv.config()
 //dotenv deve ser importado dentro do index porque ele esta dentro de database, e database esta sendo sendo executatda somente no index. Os outro arquivos não esta sendo usado.
 
@@ -13,6 +15,7 @@ const app = express()
 connectDatabase()
 app.use(express.json())  // serve para poder enviar formularios em formato json 
 app.use('/user', userRoute )
+app.use('/auth', authRoute )
 
 app.listen(port, ()=> console.log(` Servidor rodando na porta ${port} `))
 
