@@ -1,0 +1,72 @@
+MONGODB => banco de dados não relacional ideal para alicação web, pois faz queryś retornos utilizando JSON
+
+EXPRESS => framework utilizado no backend que facilita a criação de APIs REST, gerenciando rotas e equisições
+
+REACT => framework frontend criado pelo facebook que torna a aplicação mais produtiva e utilizando só javascript, em fornatos de componentes que são importados uns dentro de outro
+
+NODE-JS => ambiente de criação de códigos javascript mais conhecido do mercado, é o motor v8 que interpreta o express e o react localmente.
+
+
+
+REACT                 server
+ANGULAR  =========>   EXPRESS    =========>  MONGODB
+VUE     <=========    NODE JS    <=========
+
+
+CLASS #2
+
+npm init => inicia um projeto em NODE
+npm init -y => vai aceitar todas as perguntar
+somente usar site npm express para baixar pacotes 
+para rodar express deve-se ter o pacote NODE_MODULES intalado
+função de CALLBACK é executada por tras de outra função e deve ser anonima, não deve colocar nome na função
+IP é a numeração que fica por tras do www ou da url de qualquer site
+
+NODEMON = biblioteca utilizada para atualizar automaticamente as alterações no projeto, apartir dela pode-se colocar mais scrits estilizados como por exemplo (npm run dev)
+
+GITIGNORE = vai ignorar todas a pastas que estiver contidas e não vai  subir para o github, e se baixar do github projeto sem a pasta NODE_MODULES deve dar NPM INSTALL ou npm i para intalá-la na maquina
+___________________________________________________________________________________________________________
+
+
+
+CLASS #3
+
+a rota é a porta de entrada no backend do projeto e é dividida em 3 partes:
+method http ( get=pega algo - post= cria algo - put=altera algo - patch=altera parte - delete=remove) 
+CRUD= create, read, update, delete
+name =  identificador da rota
+function callback
+
+api rest é o uso correto dos metodos http, rest é boas praticas
+
+res.send = para retornar strings
+res.json para retornar numeros
+res.json({soma: soma}) = para retorna objetos
+usar extenção google json viewer
+___________________________________________________________________________________________________________
+
+
+
+CLASS #4
+
+existe duas arquiteturas de softwares, monolico e de microserviços
+aplicação monolitico é mais simples tem apenas cliente, servidor e banco de dados
+
+CLIENTE    =====>  SPA-REACT     =====> ( COMPONENTS,PAGES, ROUTES, SERVICE)
+SERVIDOR   =====>  API-EXPRESS   =====> ( MODELS, CONTROLLER, SERVICES, ROUTE, DATABASE, MIDDLEWARES)
+BANCO      =====>  MONGODB ATLAS =====> ( DATABASE, DOCUMENTS, COLLECTIONS)
+
+
+ROUTE chama CONTROLLER
+CONTROLLER chama SERVICE
+SERVICE chama DATABASE
+
+e depois o retorno é feito com o sentido contrario
+
+
+
+
+
+
+
+
